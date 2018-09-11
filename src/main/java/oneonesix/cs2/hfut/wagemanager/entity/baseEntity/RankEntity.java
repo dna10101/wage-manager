@@ -1,16 +1,24 @@
-package oneonesix.cs2.hfut.wagemanager.entity;
+package oneonesix.cs2.hfut.wagemanager.entity.baseEntity;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.math.BigDecimal;
 
 public class RankEntity {
+	@JsonIgnore
 	private int id;
 	private String name;
 	private BigDecimal rank_wage;
+
+	public RankEntity() {
+	}
+
 	public RankEntity(int id, String name, BigDecimal rank_wage) {
 		this.id = id;
 		this.name = name;
 		this.rank_wage = rank_wage;
 	}
+
 	public int getId() {
 		return id;
 	}

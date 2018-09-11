@@ -1,37 +1,19 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <script>
-        function loadXMLDoc()
-        {
-            var xmlhttp;
-            if (window.XMLHttpRequest)
-            {
-                //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
-                xmlhttp=new XMLHttpRequest();
-            }
-            else
-            {
-                // IE6, IE5 浏览器执行代码
-                xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-            }
-            xmlhttp.onreadystatechange=function()
-            {
-                if (xmlhttp.readyState==4 && xmlhttp.status==200)
-                {
-                    document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
-                }
-            }
-            xmlhttp.open("GET","http://localhost:8080/user/list",true);
-            xmlhttp.send();
-        }
-    </script>
-</head>
-<body>
-
-<div id="myDiv"><h2>使用 AJAX 修改该文本内容</h2></div>
-<button type="button" onclick="loadXMLDoc()">修改内容</button>
-
-</body>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <script src="lib/jQuery.js" type="text/javascript" charset="UTF-8"></script>
+    </head>
+    <body>
+        <form method="post" action="/loginCheck" id="loginForm">
+            <p>工号：<input type="text" name="id" size="20"/></p>
+            <p>密码：<input type="password" name="password" size="20"/></p>
+            <p><input type="submit" value="确定"/>
+            <input type="reset" value="取消"/></p>
+        </form>
+        <button type="button">add</button>
+        <p id="add"></p>
+        <script src="js/loginCheck.js" type="text/javascript" charset="UTF-8"></script>
+    </body>
 </html>

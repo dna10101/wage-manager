@@ -1,22 +1,31 @@
-package oneonesix.cs2.hfut.wagemanager.entity;
+package oneonesix.cs2.hfut.wagemanager.entity.baseEntity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonRootName;
+
+import javax.xml.bind.annotation.XmlRootElement;
 import java.math.BigDecimal;
 import java.sql.Date;
 
 public class WageInfoEntity {
 	private int employee_id;
+	@JsonIgnore
 	private Date date;
 	private BigDecimal base_wage;
 	private BigDecimal total_wage;
 	private BigDecimal real_wage;
-	public WageInfoEntity(int employee_id, Date date, BigDecimal base_wage,
-			BigDecimal total_wage, BigDecimal real_wage) {
+
+	public WageInfoEntity() {
+	}
+
+	public WageInfoEntity(int employee_id, Date date, BigDecimal base_wage, BigDecimal total_wage, BigDecimal real_wage) {
 		this.employee_id = employee_id;
 		this.date = date;
 		this.base_wage = base_wage;
 		this.total_wage = total_wage;
 		this.real_wage = real_wage;
 	}
+
 	public int getEmployee_id() {
 		return employee_id;
 	}
