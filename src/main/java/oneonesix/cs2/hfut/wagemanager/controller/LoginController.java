@@ -37,7 +37,7 @@ public class LoginController {
                 return new Response(0,"工号或密码错误");
             }else{
                 System.out.println(adminEntity.getName());
-                request.getSession().setAttribute("AdminEntity",adminEntity);
+                request.getSession().setAttribute("UserEntity",adminEntity);
                 return new Response(1,"登录成功");
             }
         }
@@ -53,7 +53,7 @@ public class LoginController {
         if(employeeEntity==null){
             return new Response(0,"工号或者密码错误");
         }
-        request.getSession().setAttribute("EmployeeEntity",employeeEntity);
+        request.getSession().setAttribute("UserEntity",employeeEntity);
         return new Response(1,"登录成功");
     }
 }
